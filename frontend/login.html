@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/cf37780331.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="return validate()">
+        <label for="username" id="username" name="username">Username: </label>
+        <input type="text" id="username" name="username"><br/><br/>
+        <label for="password" id="password" name="password">Password: </label>
+        <input type="password" id="password" name="password"><br/><br/>
+        <input type="submit" value="Submit">
+    </form>
+    <script>
+        function validate() {
+            var form = document.forms[0];
+            var username = form.elements["username"].value;
+            var password = form.elements["password"].value;
+
+            console.log(username, password);
+            if (username ==="Tendwa Tirus" && password === "1234"){
+                window.location.href="/frontend/index.html"
+                alert("Login Successful!");
+                return true;
+            } else if (username !== "Tendwa Tirus"){
+                alert("Login Failed!, Wrong username!");
+                return false;
+            } else {
+                alert("Login Failed!, Wrong password!");
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
